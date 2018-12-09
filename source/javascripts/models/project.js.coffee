@@ -14,7 +14,7 @@ class Gui.Models.Project extends Backbone.Model
     @images.bind 'add', @addImage
     @images.bind 'reset', @addAllImages
     @images.bind 'remove', @removeImage
-    @images.bind 'change:targetWeight', @weightHandler
+#    @images.bind 'change:targetWeight', @weightHandler
     super
     
   initialize: (params) =>
