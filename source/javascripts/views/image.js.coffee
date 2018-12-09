@@ -26,7 +26,7 @@ class Gui.Views.Image extends Gui.Views.Tile
   initialize: =>
     @model.bind 'change:file', @renderFile
     @model.bind 'change:url', @renderUrl
-    @model.bind 'change:weight', @renderWeight
+#    @model.bind 'change:weight', @renderWeight
 
     @pointViews = []
     @midpointViews = []
@@ -74,10 +74,10 @@ class Gui.Views.Image extends Gui.Views.Tile
 
   canvasHandler: (e) =>
     return if @moveMode
-    offset = @$canvas.offset()
-    x = e.pageX-offset.left - @model.morpherImage.getX()
-    y = e.pageY-offset.top - @model.morpherImage.getY()
-    @model.addPoint x, y
+#    offset = @$canvas.offset()
+#    x = e.pageX-offset.left - @model.morpherImage.getX()
+#    y = e.pageY-offset.top - @model.morpherImage.getY()
+#    @model.addPoint x, y
 
   moveHandler: (e) =>
     return unless @moveMode
@@ -220,7 +220,7 @@ class Gui.Views.Image extends Gui.Views.Tile
     @ctx = @canvas.getContext('2d')
     @pattern = @buildPattern 10, 10
     @renderUrl()
-    @renderWeight()
+#    @renderWeight()
     @renderFile()
     @addAllPointViews()
     @addAllMidpointViews()

@@ -1,12 +1,9 @@
 %button{data-action: 'addImage'}
   .icon.image
   Add image
-%button{data-action: 'editBlendFunction'}
+%button{data-action: 'addPlaceholderPoints'}
   .icon.editFunction
-  Blend function
-%button{data-action: 'editFinalTouchFunction'}
-  .icon.editFunction
-  Final touch function
+  Add placeholder points
 %button{data-action: 'export'}
   .icon.export
   Export code

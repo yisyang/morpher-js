@@ -6,7 +6,7 @@ class Gui.Views.Point extends Backbone.View
 
   events:
     'mousedown'   : 'dragHandler'
-    'contextmenu' : 'destroy'
+#    'contextmenu' : 'destroy'
     'mouseover'   : 'highlightHandler'
     'mouseout'    : 'highlightHandler'
     'dblclick'    : 'selectHandler'

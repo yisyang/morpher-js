@@ -6,7 +6,7 @@ class Gui.Views.Midpoint extends Gui.Views.Point
   triangles: null
 
   events:
-    'mousedown'     : 'split'
+#    'mousedown'     : 'split'
     'mouseover' : 'highlightHandler'
     'mouseout'  : 'highlightHandler'
 
