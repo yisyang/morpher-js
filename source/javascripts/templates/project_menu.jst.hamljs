@@ -1,9 +1,24 @@
 %button{data-action: 'addImage'}
   .icon.image
   Add image
-%button{data-action: 'addPlaceholderPoints'}
-  .icon.editFunction
-  Add placeholder points
+%button{data-action: 'addPlaceholderPointsFive'}
+  .icon.addGrid
+  Add 5x5 grid
+%button{data-action: 'addPlaceholderPointsSix'}
+  .icon.addGrid
+  Add 6x6 grid
+%button{data-action: 'addPlaceholderPointsSeven'}
+  .icon.addGrid
+  Add 7x7 grid
+%button{data-action: 'addPlaceholderPointsTwelveSeven'}
+  .icon.addGrid
+  Add 12x7 grid
+%button{data-action: 'addPlaceholderPointsFourteenSeven'}
+  .icon.addGrid
+  Add 14x7 grid
+%button{data-action: 'addCustomJson'}
+  .icon.import
+  Import code
 %button{data-action: 'export'}
   .icon.export
   Export code

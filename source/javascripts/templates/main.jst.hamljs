@@ -13,7 +13,3 @@
     Delete this project
   %hr
   .project-menus
-  %hr
-  %button{data-action: 'help'}
-    .icon.help
-    Help
