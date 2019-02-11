@@ -23,7 +23,7 @@ class Gui.Views.Project extends Backbone.View
     @model.morpher.on "resize", @updateImagesSize
     @model.morpher.on "load", @loadHandler
 
-#    @previewView = new Gui.Views.Tile()
+    @previewView = new Gui.Views.Tile()
 
     @selectedPoints = []
 
@@ -301,7 +301,7 @@ class Gui.Views.Project extends Backbone.View
 
   arrangeImages: =>
     views = @imageViews.slice 0
-#    views.splice views.length/2, 0, @previewView
+    views.splice views.length/2, 0, @previewView
     count = views.length
     for image, i in views
       image.setPosition i/count, 0, 1/count, 1
@@ -336,9 +336,9 @@ class Gui.Views.Project extends Backbone.View
 
   render: =>
     @$menuEl.html @menuTemplate()
-#    @blendFunctionView.render()
+    @blendFunctionView.render()
 #    @finalTouchFunctionView.render()
-#    @previewView.render().$el.appendTo @el
-#    @previewView.$pane.append $('<div />').addClass('artboard').append(@model.morpher.canvas)
+    @previewView.render().$el.appendTo @el
+    @previewView.$pane.append $('<div />').addClass('artboard').append(@model.morpher.canvas)
     @addAllImageViews()
     this

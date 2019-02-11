@@ -26,7 +26,7 @@ class Gui.Views.Image extends Gui.Views.Tile
   initialize: =>
     @model.bind 'change:file', @renderFile
     @model.bind 'change:url', @renderUrl
-#    @model.bind 'change:weight', @renderWeight
+    @model.bind 'change:weight', @renderWeight
 
     @pointViews = []
     @midpointViews = []
@@ -220,7 +220,7 @@ class Gui.Views.Image extends Gui.Views.Tile
     @ctx = @canvas.getContext('2d')
     @pattern = @buildPattern 10, 10
     @renderUrl()
-#    @renderWeight()
+    @renderWeight()
     @renderFile()
     @addAllPointViews()
     @addAllMidpointViews()
