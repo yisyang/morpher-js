@@ -316,15 +316,8 @@ class Gui.Views.Project extends Backbone.View
       @selectedPoints.splice i, 1
     else
       @selectedPoints.push index
-    if @selectedPoints.length < 3
-      for image in @imageViews
-        image.selectPoint index, i == -1
-    else
-      @model.addTriangle @selectedPoints[0], @selectedPoints[1], @selectedPoints[2]
-      for image in @imageViews
-        for p in @selectedPoints
-          image.selectPoint p, false
-      @selectedPoints = []
+    for image in @imageViews
+      image.selectPoint index, i == -1
 
 
   loadHandler: (morpher, canvas)=>
