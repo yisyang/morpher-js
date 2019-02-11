@@ -244,7 +244,7 @@ class MorpherJS.Morpher extends MorpherJS.EventDispatcher
     dData = destination.getContext('2d').getImageData(0, 0, source.width, source.height)
     sData = source.getContext('2d').getImageData(0, 0, source.width, source.height)
     for value, i in sData.data
-      dData.data[i] += value*weight
+      dData.data[i] += value*(1-weight)
     destination.getContext('2d').putImageData dData, 0, 0
 
 

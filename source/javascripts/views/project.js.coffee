@@ -135,3 +135,11 @@ class Gui.Views.Project extends Backbone.View
     @previewView.$pane.append $('<div />').addClass('artboard').append(@model.morpher.canvas)
     @addAllImageViews()
     this
+
+  addCustomJson: =>
+    json = prompt('Enter custom JSON.')
+    try
+      x = JSON.parse(json)
+      @model.morpher.fromJSON(x)
+    catch e
+      alert('Failed to import data.')
