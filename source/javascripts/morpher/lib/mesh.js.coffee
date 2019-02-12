@@ -234,7 +234,7 @@ class MorpherJS.Mesh extends MorpherJS.EventDispatcher
     json
 
   fromJSON: (json = {}, params = {}) =>
-    @reset() if params.hard
+    @reset() if params.hard or params.semiHard
     if json.points?
       for point, i in json.points
         if i > @points.length-1

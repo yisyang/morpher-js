@@ -222,8 +222,9 @@ class MorpherJS.Morpher extends MorpherJS.EventDispatcher
       p.x = x0
       p.y = y0
       for img in @images
-        p.x += (img.getX()+img.points[i].x-x0)*img.weight
-        p.y += (img.getY()+img.points[i].y-y0)*img.weight
+        if (img.points[i])
+          p.x += (img.getX()+img.points[i].x-x0)*img.weight
+          p.y += (img.getY()+img.points[i].y-y0)*img.weight
 
   animationStep: =>
     if @t0?
@@ -274,6 +275,9 @@ class MorpherJS.Morpher extends MorpherJS.EventDispatcher
     if json.triangles?
       for triangle in json.triangles[@triangles.length..-1]
         @addTriangle triangle[0], triangle[1], triangle[2]
+
+    for img, i in @images
+      img.setWeight(if i is 1 then 1 else 0)
 
 
   reset: =>

@@ -132,4 +132,4 @@ class MorpherJS.Image extends MorpherJS.EventDispatcher
     @setX json.x, params if json.x?
     @setY json.y, params if json.y?
     @mesh.fromJSON(json, params)
-    @setSrc json.src if json.src?
+#    @setSrc json.src if json.src?
