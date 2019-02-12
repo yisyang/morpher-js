@@ -257,7 +257,24 @@ class Gui.Views.Project extends Backbone.View
     json = prompt('Enter custom JSON.')
     try
       x = JSON.parse(json)
-      @model.morpher.fromJSON(x)
+
+      y = {}
+      if x.images?
+        y.images = [];
+        for image, i in y.images
+          y.images[i] = {points: []}
+        y.triangles = []
+
+      @model.morpher.fromJSON(y, {semiHard: true})
+
+      sleep = (ms) =>
+        new Promise (resolve) =>
+          setTimeout(resolve, ms)
+          return
+
+      sleep(500).then () =>
+        @model.morpher.fromJSON(x)
+        return
     catch e
       alert('Failed to import data.')
 
