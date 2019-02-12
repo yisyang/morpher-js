@@ -1,6 +1,7 @@
 class Gui.Views.Point extends Backbone.View
   className: 'point'
 
+  bgColor: 'rgba(0,0,0,0.5)'
   delta: null
   image: null
 
@@ -12,6 +13,7 @@ class Gui.Views.Point extends Backbone.View
     'dblclick'    : 'selectHandler'
 
   initialize: (params = {})=>
+    @bgColor = params.bgColor if params.bgColor?
     @image = params.image
     @model.on 'change', @render
     @image.on 'change:x change:y', @render
@@ -75,6 +77,7 @@ class Gui.Views.Point extends Backbone.View
     @$el.css
       left: "#{@model.getX()+@image.getX()}px",
       top: "#{@model.getY()+@image.getY()}px"
+      backgroundColor: @bgColor
     this
 
   
