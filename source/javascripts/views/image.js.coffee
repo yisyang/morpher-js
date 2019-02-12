@@ -115,8 +115,45 @@ class Gui.Views.Image extends Gui.Views.Tile
 
   # points
 
-  addPointView: (image, point) =>
-    view = new Gui.Views.Point(model: point, image: @model.morpherImage)
+  addPointView: (image, point, params) =>
+    colors = [
+      'rgba(0,0,0,0.5)',
+      'rgba(0,0,100,0.5)',
+      'rgba(0,0,200,0.5)',
+      'rgba(0,100,0,0.5)',
+      'rgba(0,100,100,0.5)',
+      'rgba(0,100,200,0.5)',
+      'rgba(0,200,0,0.5)',
+      'rgba(0,200,100,0.5)',
+      'rgba(0,200,200,0.5)',
+      'rgba(100,0,0,0.5)',
+      'rgba(100,0,100,0.5)',
+      'rgba(100,0,200,0.5)',
+      'rgba(100,100,0,0.5)',
+      'rgba(100,100,100,0.5)',
+      'rgba(100,100,200,0.5)',
+      'rgba(100,200,0,0.5)',
+      'rgba(100,200,100,0.5)',
+      'rgba(100,200,200,0.5)',
+      'rgba(200,0,0,0.5)',
+      'rgba(200,0,100,0.5)',
+      'rgba(200,0,200,0.5)',
+      'rgba(200,100,0,0.5)',
+      'rgba(200,100,100,0.5)',
+      'rgba(200,100,200,0.5)',
+      'rgba(200,200,0,0.5)',
+      'rgba(200,200,100,0.5)',
+      'rgba(200,200,200,0.5)',
+    ]
+
+    if params? && params.bgColorIndex?
+      i = Math.round(params.bgColorIndex * (params.bgColorIndex + 0.5 * colors.length)) % colors.length
+    else
+      i = Math.round(@pointViews.length * (@pointViews.length + 0.5 * colors.length)) % colors.length
+
+    bgColor = colors[i]
+
+    view = new Gui.Views.Point(model: point, image: @model.morpherImage, bgColor: bgColor)
     @pointViews.push view
     view.on 'drag:stop', @dragStopHandler
     view.on 'highlight', @highlightHandler
@@ -130,7 +167,7 @@ class Gui.Views.Image extends Gui.Views.Tile
     for view in @pointViews
       view.remove()
     @pointViews = []
-    @addPointView(null, point) for point in @model.morpherImage.mesh.points
+    @addPointView(null, point, {bgColorIndex: i}) for point, i in @model.morpherImage.mesh.points
 
   removePointView: (image, point, index) =>
     @pointViews[index].remove()
