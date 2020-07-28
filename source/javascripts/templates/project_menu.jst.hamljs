@@ -1,21 +1,27 @@
 %button{data-action: 'addImage'}
   .icon.image
   Add image
-%button{data-action: 'addPlaceholderPointsFive'}
+%button{data-action: 'addPlaceholderPointsFiveByFive'}
   .icon.addGrid
-  Add 5x5 grid
-%button{data-action: 'addPlaceholderPointsSix'}
+  5x5
+%button{data-action: 'addPlaceholderPointsFiveBySeven'}
   .icon.addGrid
-  Add 6x6 grid
-%button{data-action: 'addPlaceholderPointsSeven'}
+  5x7
+%button{data-action: 'addPlaceholderPointsFiveByNine'}
   .icon.addGrid
-  Add 7x7 grid
-%button{data-action: 'addPlaceholderPointsFiveNine'}
+  5x9
+%button{data-action: 'addPlaceholderPointsSixBySix'}
   .icon.addGrid
-  Add 5x9 grid
-%button{data-action: 'addPlaceholderPointsNineFive'}
+  6x6
+%button{data-action: 'addPlaceholderPointsSevenByFive'}
   .icon.addGrid
-  Add 9x5 grid
+  7x5
+%button{data-action: 'addPlaceholderPointsSevenBySeven'}
+  .icon.addGrid
+  7x7
+%button{data-action: 'addPlaceholderPointsNineBySeven'}
+  .icon.addGrid
+  9x7
 %button{data-action: 'addCustomJson'}
   .icon.import
   Import code
